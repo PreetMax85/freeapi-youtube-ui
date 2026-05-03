@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Videos Listing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8">
+    <header class="max-w-7xl mx-auto mb-8">
+        <h1 class="text-2xl font-bold text-gray-900">Recommended</h1>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <!-- Video Grid -->
+        <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Videos will be injected here -->
+        </div>
+
+        <!-- Skeleton Loader Container -->
+        <div id="skeleton-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6 hidden">
+            <!-- 12 skeletons will be injected here via JS -->
+        </div>
+
+        <!-- Error State -->
+        <div id="error-container" class="hidden flex flex-col items-center justify-center py-20 text-center">
+            <p class="text-lg text-gray-600 mb-4">Failed to load videos. Try again.</p>
+            <button id="retry-btn" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+                Retry
+            </button>
+        </div>
+
+        <!-- Load More -->
+        <div class="flex justify-center mt-12 pb-8">
+            <button id="load-more-btn" class="hidden px-8 py-2 bg-white border border-gray-300 rounded-full text-sm font-medium hover:bg-gray-50 transition shadow-sm">
+                Load More
+            </button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
